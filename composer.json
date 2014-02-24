@@ -1,0 +1,23 @@
+{
+    "name": "dinesh/bugonemail",
+    "description": "",
+    "authors": [
+        {
+            "name": "Dinesh Rabara",
+            "email": "dinesh.rabara@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Dinesh\\Bugonemail\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
