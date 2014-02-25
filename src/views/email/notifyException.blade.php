@@ -3,14 +3,24 @@
 {{print_r($fullUrl)}}
 </pre>
 
-<p>inputs</p>
+<p>GET Data</p>
 <pre>
-{{print_r($input)}}
+{{print_r($input_get)}}
 </pre>
 
-<p>cookies</p>
+<p>POST Data</p>
+<pre>
+{{print_r($input_post)}}
+</pre>
+
+<p>Cookies</p>
 <pre>
 {{print_r($cookie)}}
+</pre>
+
+<p>Files</p>
+<pre>
+{{print_r($file)}}
 </pre>
 
 <p>header</p>
@@ -18,7 +28,7 @@
 {{print_r($header)}}
 </pre>
 
-<p>server</p>
+<p>Server/Request Data</p>
 <pre>
 {{print_r($server)}}
 </pre>
@@ -28,7 +38,7 @@
 {{print_r($json)}}
 </pre>
 
-<p>request_format</p>
+<p>Request Format</p>
 <pre>
 {{print_r($request_format)}}
 </pre>

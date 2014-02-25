@@ -2,6 +2,8 @@
 
 namespace Dinesh\Bugonemail;
 
+use Illuminate\Support\Facades\Request;
+
 /**
  * Description of BugeException
  *
@@ -23,14 +25,18 @@ class BugeException {
     public function notifyException($exception) {
         if (!empty($this->env)) {
             $request = array();
-            $request['fullUrl'] = \Request::fullUrl();
-            $request['input'] = \Request::input();
-            $request['cookie'] = \Request::cookie();
-            $request['header'] = \Request::header();
-            $request['server'] = \Request::server();
-            $request['json'] = \Request::json();
-            $request['request_format'] = \Request::format();
+            $request['fullUrl'] = Request::fullUrl();
+            $request['input_get'] = $_GET;
+            $request['input_post'] = $_POST;
+            $request['input_old'] = Request::old();
+            $request['cookie'] = Request::cookie();
+            $request['file'] = Request::file();
+            $request['header'] = Request::header();
+            $request['server'] = Request::server();
+            $request['json'] = Request::json();
+            $request['request_format'] = Request::format();
             $request['error'] = (string) $exception;
+            
             \Mail::send("{$this->config['email_template']}", $request, function($message) use ($request) {
                 $message->to($this->config['notify_emails'])->subject('BugOnEmail! On Url ' . $request['fullUrl']);
             });
