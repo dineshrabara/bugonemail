@@ -22,9 +22,17 @@ class BugeException {
 
     public function notifyException($exception) {
         if (!empty($this->env)) {
-            $mail_data['data'] = (string)$exception;
-            \Mail::send("{$this->config['email_template']}", $mail_data, function($message) {
-                $message->to($this->config['notify_emails'])->subject('BugOnEmail!');
+            $request = array();
+            $request['fullUrl'] = \Request::fullUrl();
+            $request['input'] = \Request::input();
+            $request['cookie'] = \Request::cookie();
+            $request['header'] = \Request::header();
+            $request['server'] = \Request::server();
+            $request['json'] = \Request::json();
+            $request['request_format'] = \Request::format();
+            $request['error'] = (string) $exception;
+            \Mail::send("{$this->config['email_template']}", $request, function($message) use ($request) {
+                $message->to($this->config['notify_emails'])->subject('BugOnEmail! On Url ' . $request['fullUrl']);
             });
         }
         return $exception;
