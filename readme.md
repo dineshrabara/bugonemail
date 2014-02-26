@@ -1,7 +1,8 @@
 
 ## Installation
 
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `dinesh/barcode`.
+Begin by installing this package through Composer.
+Edit your project's `composer.json` file to require `dinesh/bugonemail`.
 
     "require": {
 		"laravel/framework": "4.0.*",

@@ -1,6 +1,8 @@
 {
     "name": "dinesh/bugonemail",
-    "description": "",
+    "description": "Get Laravel Bug or Error instant notification by Emails ",
+    "keywords": ["laravel", "Bug", "BugOnEmail", "Bug Email", "Error", "Error on Email","instant bug","instant error"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Dinesh Rabara",
