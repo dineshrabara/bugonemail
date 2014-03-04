@@ -23,7 +23,7 @@ class BugonemailServiceProvider extends ServiceProvider {
         $app = $this->app;
 
         // Register for exception handling
-        $app->error(function (\Exception $exception) use ($app) {                        
+        $app->error(function (\Exception $exception) use ($app) {            
             $app['Bugonemail']->notifyException($exception);
         });
 

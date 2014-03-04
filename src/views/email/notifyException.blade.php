@@ -3,6 +3,11 @@
 {{print_r($fullUrl)}}
 </pre>
 
+<p>subject line</p>
+<pre>
+{{print_r($subject_line)}}
+</pre>
+
 <p>GET Data</p>
 <pre>
 {{print_r($input_get)}}
