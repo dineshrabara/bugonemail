@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Bugonemail by dineshrabara</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/dineshrabara/bugonemail">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Bugonemail</h1>
+            <h2>bugonemail </h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/dineshrabara/bugonemail/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/dineshrabara/bugonemail/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Begin by installing this package through Composer.
+Edit your project's <code>composer.json</code> file to require <code>dinesh/bugonemail</code>.</p>
+
+<pre><code>"require": {
+    "laravel/framework": "4.0.*",
+    "dinesh/bugonemail": "dev-master"
+}
+</code></pre>
+
+<p>Next, update Composer from the Terminal:</p>
+
+<pre><code>composer update
+</code></pre>
+
+<p>Once this operation completes, the next step is to add the service provider. Open <code>app/config/app.php</code>, and add a new item to the providers array.</p>
+
+<pre><code>'Dinesh\Bugonemail\BugonemailServiceProvider'
+</code></pre>
+
+<p>Next, you need to publish it's config file(s).</p>
+
+<pre><code>Run php artisan config:publish dinesh/bugonemail 
+</code></pre>
+
+<p>Now change Config file.</p>
+
+<div class="highlight highlight-php"><pre>
+    <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'project_name'</span> <span class="o">=&gt;</span> <span class="s1">'? '</span><span class="p">,</span>
+        <span class="s1">'notify_emails'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'your-email@gmail.com'</span><span class="p">),</span>
+        <span class="s1">'email_template'</span> <span class="o">=&gt;</span> <span class="s2">"bugonemail::email.notifyException"</span><span class="p">,</span>
+        <span class="s1">'notify_environment'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">'local'</span><span class="p">,</span><span class="s1">'production'</span><span class="p">),</span>
+    <span class="p">);</span>
+
+</pre></div>
+
+<p>Email like</p>
+
+<p><img src="https://cloud.githubusercontent.com/assets/1228130/3213968/56a4eb00-efa3-11e3-9ea6-85e840174c88.jpg" alt="whoops there was an error"></p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/dineshrabara">dineshrabara</a> can be found on <a href="https://github.com/dineshrabara/bugonemail">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
