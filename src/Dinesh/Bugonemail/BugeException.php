@@ -37,6 +37,7 @@ class BugeException {
             $request['request_format'] = Request::format();
             $request['error'] = $exception->getTraceAsString();
             $request['subject_line'] = $exception->getMessage();
+            $request['class_name'] = get_class($exception);
             \Mail::send("{$this->config['email_template']}", $request, function($message) use ($request) {
                 $message->to($this->config['notify_emails'])->subject("{$this->config['project_name']} On Url " . $request['fullUrl']);
             });
