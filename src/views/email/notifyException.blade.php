@@ -15,12 +15,7 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">GET Data</label>
                                 @if(!empty($input_get))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    <thead style="display: none">
-                                        <tr>
-                                            <td class="data-table-k">Key</td>
-                                            <td class="data-table-v">Value</td>
-                                        </tr>
-                                    </thead>
+                                    
                                     @foreach($input_get as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
@@ -36,12 +31,7 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">POST Data</label>
                                 @if(!empty($input_post))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    <thead style="display: none">
-                                        <tr>
-                                            <td class="data-table-k">Key</td>
-                                            <td class="data-table-v">Value</td>
-                                        </tr>
-                                    </thead>
+                                    
                                     @foreach($input_post as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
@@ -57,12 +47,7 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Input Old Data</label>
                                 @if(!empty($input_old))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    <thead style="display: none">
-                                        <tr>
-                                            <td class="data-table-k">Key</td>
-                                            <td class="data-table-v">Value</td>
-                                        </tr>
-                                    </thead>
+                                    
                                     @foreach($input_old as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
@@ -78,12 +63,7 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Files</label>
                                 @if(!empty($file))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    <thead style="display: none">
-                                        <tr>
-                                            <td class="data-table-k">Key</td>
-                                            <td class="data-table-v">Value</td>
-                                        </tr>
-                                    </thead>
+                                    
                                     @foreach($file as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
@@ -133,12 +113,7 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Server/Request Data</label>
                                 @if(!empty($server))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    <thead style="display: none">
-                                        <tr>
-                                            <td class="data-table-k">Key</td>
-                                            <td class="data-table-v">Value</td>
-                                        </tr>
-                                    </thead>
+                                    
                                     @foreach($server as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
@@ -151,15 +126,10 @@
                                 @endif
                             </div>
                             <div class="data-table" id="sg-cookies" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Header's</label>
+                                <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Header</label>
                                 @if(!empty($header))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    <thead style="display: none">
-                                        <tr>
-                                            <td class="data-table-k">Key</td>
-                                            <td class="data-table-v">Value</td>
-                                        </tr>
-                                    </thead>
+                                    
                                     @foreach($header as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
