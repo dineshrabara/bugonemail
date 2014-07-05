@@ -117,7 +117,7 @@
                                     @foreach($server as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{ is_array($val) || is_object($val) ? $val : json_encode($val)}}</td>
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{is_string($val)?$val:json_encode($val)}}</td>
                                     </tr>
                                     @endforeach
                                 </table>
