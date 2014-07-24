@@ -29,6 +29,7 @@ Now change Config file.
         'notify_emails' => array('your-email@gmail.com'),
         'email_template' => "bugonemail::email.notifyException",
         'notify_environment' => array('local','production'),
+        'prevent_exception' => array('Symfony\Component\HttpKernel\Exception\NotFoundHttpException'),
     );
 
 ```
