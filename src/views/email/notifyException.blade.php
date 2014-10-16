@@ -33,10 +33,21 @@
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
                                     
                                     @foreach($input_post as $key=>$val)
+                                    @if(is_array($val))
+                                    @foreach($val as $subkey=>$subval)
+                                    <tr>
+                                        <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}[{{$subkey}}]</td>
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;"><pre>$subval</pre></td>
+
+                                    </tr>
+                                    @endforeach
+                                    @else
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
                                         <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$val}}</td>
+
                                     </tr>
+                                    @endif
                                     @endforeach
                                 </table>
                                 @else
