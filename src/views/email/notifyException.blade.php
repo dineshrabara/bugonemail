@@ -15,12 +15,23 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">GET Data</label>
                                 @if(!empty($input_get))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    
+
                                     @foreach($input_get as $key=>$val)
+                                    @if(is_array($val))
+                                    @foreach($val as $subkey=>$subval)
+                                    <tr>
+                                        <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}[{{$subkey}}]</td>
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$subval}}</td>
+
+                                    </tr>
+                                    @endforeach
+                                    @else
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
                                         <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$val}}</td>
+
                                     </tr>
+                                    @endif
                                     @endforeach
                                 </table>
                                 @else
@@ -31,13 +42,13 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">POST Data</label>
                                 @if(!empty($input_post))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    
+
                                     @foreach($input_post as $key=>$val)
                                     @if(is_array($val))
                                     @foreach($val as $subkey=>$subval)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}[{{$subkey}}]</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;"><pre>$subval</pre></td>
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$subval}}</td>
 
                                     </tr>
                                     @endforeach
@@ -58,12 +69,23 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Input Old Data</label>
                                 @if(!empty($input_old))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    
+
                                     @foreach($input_old as $key=>$val)
+                                    @if(is_array($val))
+                                    @foreach($val as $subkey=>$subval)
+                                    <tr>
+                                        <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}[{{$subkey}}]</td>
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$subval}}</td>
+
+                                    </tr>
+                                    @endforeach
+                                    @else
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
                                         <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$val}}</td>
+
                                     </tr>
+                                    @endif
                                     @endforeach
                                 </table>
                                 @else
@@ -74,7 +96,7 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Files</label>
                                 @if(!empty($file))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    
+
                                     @foreach($file as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
@@ -124,7 +146,7 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Server/Request Data</label>
                                 @if(!empty($server))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    
+
                                     @foreach($server as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
@@ -140,7 +162,7 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Header</label>
                                 @if(!empty($header))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-                                    
+
                                     @foreach($header as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
