@@ -108,6 +108,28 @@
                                 <span style="color: rgba(0, 0, 0, 0.3);font-style: italic;" >empty</span>
                                 @endif
                             </div>
+                            <div class="data-table" id="sg-get-data" style="margin: 10px 0;width: 100%; font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;">
+                                <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">Session All</label>
+                                @if(!empty($session))
+                                <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
+
+                                    @foreach($session as $key=>$val)
+                                    <tr>
+                                        <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">
+                                            @if(is_array($val))
+                                            {{{var_dump($val)}}}
+                                            @else
+                                            {{$val}}
+                                            @endif
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </table>
+                                @else
+                                <span style="color: rgba(0, 0, 0, 0.3);font-style: italic;">empty</span>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
