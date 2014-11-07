@@ -23,7 +23,7 @@ class BugonemailServiceProvider extends ServiceProvider {
         $app = $this->app;
 
         // Register for exception handling
-        $app->error(function (\Exception $exception) use ($app) {            
+        $app->error(function (\Exception $exception) use ($app) {
             $app['Bugonemail']->notifyException($exception);
         });
 
@@ -40,9 +40,13 @@ class BugonemailServiceProvider extends ServiceProvider {
      */
     public function register() {
         //
+        $this->app['BugeException'] = $this->app->share(function($app) {
+            $config = $app['config']['bugonemail'] ? : $app['config']['bugonemail::config'];
+            return new BugeException($config);
+        });
         $this->app->singleton('Bugonemail', function ($app) {
             $config = $app['config']['bugonemail'] ? : $app['config']['bugonemail::config'];
-
+            
             $bug = new BugeException($config);
 
             if (in_array($app->environment(), $config['notify_environment'])) {
@@ -50,6 +54,11 @@ class BugonemailServiceProvider extends ServiceProvider {
             }
 
             return $bug;
+        });
+        // Shortcut so developers don't need to add an Alias in app/config/app.php
+        $this->app->booting(function() {
+            $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+            $loader->alias('BugeException', 'Dinesh\Bugonemail\Facades\BugeExceptionFacade');
         });
     }
 
