@@ -19,7 +19,7 @@ Once this operation completes, the next step is to add the service provider. Ope
 
 Next, you need to publish it's config file(s).
 
-    Run php artisan config:publish dinesh/bugonemail 
+    php artisan config:publish dinesh/bugonemail 
 
 Now change Config file.
 ```php
@@ -33,6 +33,10 @@ Now change Config file.
     );
 
 ```
+Manually Call
+
+    BugeException::notifyException($exception)
+
 
 Email like
 
