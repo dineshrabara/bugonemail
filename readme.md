@@ -1,8 +1,7 @@
 
 ## Installation
 
-[![Latest Stable Version](https://poser.pugx.org/dinesh/bugonemail/v/stable.svg)](https://packagist.org/packages/dinesh/bugonemail) 
-[![Total Downloads](https://poser.pugx.org/dinesh/bugonemail/downloads.svg)](https://packagist.org/packages/dinesh/bugonemail)
+[![Latest Stable Version](https://poser.pugx.org/dinesh/bugonemail/v/stable.svg)](https://packagist.org/packages/dinesh/bugonemail) [![Total Downloads](https://poser.pugx.org/dinesh/bugonemail/downloads.svg)](https://packagist.org/packages/dinesh/bugonemail) [![Latest Unstable Version](https://poser.pugx.org/dinesh/bugonemail/v/unstable.svg)](https://packagist.org/packages/dinesh/bugonemail) [![License](https://poser.pugx.org/dinesh/bugonemail/license.svg)](https://packagist.org/packages/dinesh/bugonemail)
 
 Begin by installing this package through Composer.
 Edit your project's `composer.json` file to require `dinesh/bugonemail`.
