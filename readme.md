@@ -40,6 +40,9 @@ Manually Call
 
     BugeException::notifyException($exception)
 
+Manually set environment
+
+    BugeException::setEnvironment("local")
 
 Email like
 
