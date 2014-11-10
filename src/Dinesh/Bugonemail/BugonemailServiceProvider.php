@@ -42,7 +42,13 @@ class BugonemailServiceProvider extends ServiceProvider {
         //
         $this->app['BugeException'] = $this->app->share(function($app) {
             $config = $app['config']['bugonemail'] ? : $app['config']['bugonemail::config'];
-            return new BugeException($config);
+            $bug = new BugeException($config);
+
+            if (in_array($app->environment(), $config['notify_environment'])) {
+                $bug->setEnvironment($app->environment());
+            }
+
+            return $bug;
         });
         $this->app->singleton('Bugonemail', function ($app) {
             $config = $app['config']['bugonemail'] ? : $app['config']['bugonemail::config'];
