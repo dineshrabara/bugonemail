@@ -63,19 +63,24 @@ Edit your project's <code>composer.json</code> file to require <code>dinesh/bugo
 
 <p>Now change Config file.</p>
 
-<div class="highlight highlight-php"><pre><span class="h"></span>
-<span class="h">    <span class="k">return</span> <span class="nf">array</span>(</span>
-<span class="h">        <span class="s1">'project_name'</span> <span class="o">=&gt;</span> <span class="s1">'? '</span>,</span>
-<span class="h">        <span class="s1">'notify_emails'</span> <span class="o">=&gt;</span> <span class="nf">array</span>(<span class="s1">'your-email@gmail.com'</span>),</span>
-<span class="h">        <span class="s1">'email_template'</span> <span class="o">=&gt;</span> <span class="s2">"bugonemail::email.notifyException"</span>,</span>
-<span class="h">        <span class="s1">'notify_environment'</span> <span class="o">=&gt;</span> <span class="nf">array</span>(<span class="s1">'local'</span>,<span class="s1">'production'</span>),</span>
-<span class="h">        <span class="s1">'prevent_exception'</span> <span class="o">=&gt;</span> <span class="nf">array</span>(<span class="s1">'Symfony\Component\HttpKernel\Exception\NotFoundHttpException'</span>),</span>
-<span class="h">    );</span>
-<span class="h"></span></pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s2"></span>
+<span class="pl-s2">    <span class="pl-k">return</span> <span class="pl-sf">array</span>(</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>project_name<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>? <span class="pl-pds">'</span></span>,</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>notify_emails<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-sf">array</span>(<span class="pl-s1"><span class="pl-pds">'</span>your-email@gmail.com<span class="pl-pds">'</span></span>),</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>email_template<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-s1"><span class="pl-pds">"</span>bugonemail::email.notifyException<span class="pl-pds">"</span></span>,</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>notify_environment<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-sf">array</span>(<span class="pl-s1"><span class="pl-pds">'</span>local<span class="pl-pds">'</span></span>,<span class="pl-s1"><span class="pl-pds">'</span>production<span class="pl-pds">'</span></span>),</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>prevent_exception<span class="pl-pds">'</span></span> <span class="pl-ko">=&gt;</span> <span class="pl-sf">array</span>(<span class="pl-s1"><span class="pl-pds">'</span>Symfony\Component\HttpKernel\Exception\NotFoundHttpException<span class="pl-pds">'</span></span>),</span>
+<span class="pl-s2">    );</span>
+<span class="pl-s2"></span></pre></div>
 
 <p>Manually Call</p>
 
 <pre><code>BugeException::notifyException($exception)
+</code></pre>
+
+<p>Manually set environment</p>
+
+<pre><code>BugeException::setEnvironment("local")
 </code></pre>
 
 <p>Email like</p>
