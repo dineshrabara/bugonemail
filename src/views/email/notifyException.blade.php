@@ -17,21 +17,10 @@
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
 
                                     @foreach($input_get as $key=>$val)
-                                    @if(is_array($val))
-                                    @foreach($val as $subkey=>$subval)
-                                    <tr>
-                                        <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}[{{$subkey}}]</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$subval}}</td>
-
-                                    </tr>
-                                    @endforeach
-                                    @else
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$val}}</td>
-
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{print_r($val,true)}}</td>
                                     </tr>
-                                    @endif
                                     @endforeach
                                 </table>
                                 @else
@@ -42,23 +31,11 @@
                                 <label style=" border-bottom: 1px solid rgba(0, 0, 0, 0.08);color: #ED591A;display: block;font-size: 16px;font-weight: bold;margin: 10px 0 5px;padding: 10px 0 5px;">POST Data</label>
                                 @if(!empty($input_post))
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
-
                                     @foreach($input_post as $key=>$val)
-                                    @if(is_array($val))
-                                    @foreach($val as $subkey=>$subval)
-                                    <tr>
-                                        <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}[{{$subkey}}]</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$subval}}</td>
-
-                                    </tr>
-                                    @endforeach
-                                    @else
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$val}}</td>
-
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{print_r($val,true)}}</td>
                                     </tr>
-                                    @endif
                                     @endforeach
                                 </table>
                                 @else
@@ -71,21 +48,10 @@
                                 <table class="data-table" style="font: 12px 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;margin: 10px 0;width: 100%;">
 
                                     @foreach($input_old as $key=>$val)
-                                    @if(is_array($val))
-                                    @foreach($val as $subkey=>$subval)
-                                    <tr>
-                                        <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}[{{$subkey}}]</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$subval}}</td>
-
-                                    </tr>
-                                    @endforeach
-                                    @else
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$val}}</td>
-
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{print_r($val,true)}}</td>
                                     </tr>
-                                    @endif
                                     @endforeach
                                 </table>
                                 @else
@@ -100,7 +66,7 @@
                                     @foreach($file as $key=>$val)
                                     <tr>
                                         <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{$val}}</td>
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{print_r($val,true)}}</td>
                                     </tr>
                                     @endforeach
                                 </table>
@@ -115,14 +81,8 @@
 
                                     @foreach($session as $key=>$val)
                                     <tr>
-                                        <td style=" color: #463C54;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
-                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">
-                                            @if(is_array($val))
-                                            <?php print_r($val); ?>
-                                            @else
-                                            {{$val}}
-                                            @endif
-                                        </td>
+                                        <td style=" color: #463C54;min-width: 130px;overflow: hidden;padding-right: 5px;width: 20%;">{{$key}}</td>
+                                        <td style="width: 80%;color:#999;-ms-word-break: break-all;word-break: break-all;word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;">{{print_r($val,true)}}</td>
                                     </tr>
                                     @endforeach
                                 </table>
@@ -151,7 +111,7 @@
                             <div class="frame-file" style="background: none repeat scroll 0 0 #ED591A;color: #FFFFFF;font-size: 11px;font-weight: normal;padding: 10px;font-family: 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;word-wrap: break-word;">
                                 {{$subject_line}}
                             </div>
-                            <pre class="code-block prettyprint" style="white-space: pre-wrap; background: none repeat scroll 0 0 #272727;color: #929292;font-family: 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;font-size: 11px;font-weight: normal;    line-height: 1.5em; box-shadow: 0 0 6px rgba(0, 0, 0, 0.3) inset;margin: 0;padding: 10px;">	 
+                            <pre class="code-block prettyprint" style="white-space: pre-wrap; background: none repeat scroll 0 0 #272727;color: #929292;font-family: 'Source Code Pro',Monaco,Consolas,'Lucida Console',monospace;font-size: 11px;font-weight: normal;    line-height: 1.5em; box-shadow: 0 0 6px rgba(0, 0, 0, 0.3) inset;margin: 0;padding: 10px;">
                                 {{$error}}
                             </pre>
 
