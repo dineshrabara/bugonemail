@@ -8,8 +8,8 @@ Begin by installing this package through Composer.
 Edit your project's `composer.json` file to require `dinesh/bugonemail`.
 
     "require": {
-		"laravel/framework": "4.0.*",
-		"dinesh/bugonemail": "dev-master"
+		"laravel/framework": "5.0.*",
+		"dinesh/bugonemail": "5.0.*@dev"
 	}
 
 Next, update Composer from the Terminal:

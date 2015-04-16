@@ -22,7 +22,7 @@ class BugeException {
         $this->env = $env;
     }
 
-    public function notifyException($exception) {
+    public function notifyException($exception) {     
         if (!empty($this->env)) {
             $request = array();
             $request['fullUrl'] = Request::fullUrl();
@@ -39,8 +39,8 @@ class BugeException {
             $request['error'] = $exception->getTraceAsString();
             $request['subject_line'] = $exception->getMessage();
             $request['class_name'] = get_class($exception);
-            if (!in_array($request['class_name'], $this->config['prevent_exception'])) {
-                \Mail::send("{$this->config['email_template']}", $request, function($message) use ($request) {
+            if (!in_array($request['class_name'], $this->config['prevent_exception'])) {                
+                \Mail::send("{$this->config['email_template']}", $request, function($message) use ($request) {                    
                     $message->to($this->config['notify_emails'])->subject("{$this->config['project_name']} On Url " . $request['fullUrl']);
                 });
             }
