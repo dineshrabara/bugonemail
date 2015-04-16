@@ -23,7 +23,12 @@ class BugonemailServiceProvider extends ServiceProvider
         $configPath = __DIR__.'/../../config/bugonemail.php';
         $this->publishes([$configPath => config_path('bugonemail.php')],
             'config');
-        $app        = $this->app;
+        $this->loadViewsFrom(__DIR__.'/../../views', 'bugonemail');
+
+        $this->publishes([
+            __DIR__.'/../../views' => base_path('resources/views/vendor/bugonemail'),
+        ]);
+        $app = $this->app;
 
         $app->singleton('Illuminate\Contracts\Debug\ExceptionHandler',
             'Dinesh\Bugonemail\BugonemailExceptionHandler');
