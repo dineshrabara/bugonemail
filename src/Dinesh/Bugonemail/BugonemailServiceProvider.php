@@ -19,7 +19,8 @@ class BugonemailServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot() {
-        $this->package('dinesh/bugonemail');
+        $configPath = __DIR__ . '/../../config/bugonemail.php';
+        $this->publishes([$configPath => config_path('bugonemail.php')], 'config');        
         $app = $this->app;
 
         // Register for exception handling
