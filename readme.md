@@ -9,7 +9,7 @@ Edit your project's `composer.json` file to require `dinesh/bugonemail`.
 
     "require": {
 		"laravel/framework": "5.*",
-		"dinesh/bugonemail": "5.*@dev"
+		"dinesh/bugonemail": "V2.1"
 	}
 
 Next, update Composer from the Terminal:
