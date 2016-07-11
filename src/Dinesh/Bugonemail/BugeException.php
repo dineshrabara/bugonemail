@@ -2,8 +2,9 @@
 
 namespace Dinesh\Bugonemail;
 
-use Illuminate\Support\Facades\Request;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Mail;
 /**
  * Description of BugeException
  *
@@ -22,25 +23,27 @@ class BugeException {
         $this->env = $env;
     }
 
-    public function notifyException($exception) {     
+    public function notifyException($exception) {
         if (!empty($this->env)) {
+            $object = new Request();
             $request = array();
-            $request['fullUrl'] = Request::fullUrl();
+            $request['fullUrl'] = $object->fullUrl();
             $request['input_get'] = $_GET;
             $request['input_post'] = $_POST;
-            $request['input_old'] = Request::old();
-            $request['session'] = \Session::all();
-            $request['cookie'] = Request::cookie();
-            $request['file'] = Request::file();
-            $request['header'] = Request::header();
-            $request['server'] = Request::server();
-            $request['json'] = Request::json();
-            $request['request_format'] = Request::format();
+            $request['input_old'] = $object->all();
+            $request['session'] = Session::all();
+            $request['cookie'] = $object->cookie();
+            $request['file'] = $object->file();
+            $request['header'] = $object->header();
+            $request['server'] = $object->server();
+            $request['json'] = $object->json();
+            $request['request_format'] = $object->format();
             $request['error'] = $exception->getTraceAsString();
             $request['subject_line'] = $exception->getMessage();
             $request['class_name'] = get_class($exception);
-            if (!in_array($request['class_name'], $this->config['prevent_exception'])) {                
-                \Mail::send("{$this->config['email_template']}", $request, function($message) use ($request) {                    
+
+            if (!in_array($request['class_name'], $this->config['prevent_exception'])) {
+                Mail::send("{$this->config['email_template']}", $request, function($message) use ($request) {
                     $message->to($this->config['notify_emails'])->subject("{$this->config['project_name']} On Url " . $request['fullUrl']);
                 });
             }
