@@ -18,11 +18,11 @@ Next, update Composer from the Terminal:
 
 Once this operation completes, the next step is to add the service provider. Open `app/config/app.php`, and add a new item to the providers array.
 
-    'Dinesh\Bugonemail\BugonemailServiceProvider'
+    Dinesh\Bugonemail\BugonemailServiceProvider::class
 
 Next, you need to publish it's config file(s).
 
-    php artisan config:publish dinesh/bugonemail 
+    php artisan vendor:publish dinesh/bugonemail 
 
 Now change Config file.
 ```php
