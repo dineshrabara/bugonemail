@@ -28,7 +28,7 @@ class BugeException {
             $request['fullUrl'] = Request::fullUrl();
             $request['input_get'] = $_GET;
             $request['input_post'] = $_POST;
-            $request['input_old'] = Request::old();
+            $request['input_old'] = \Request::hasSession() ? Request::old() : array();
             $request['session'] = \Session::all();
             $request['cookie'] = Request::cookie();
             $request['file'] = Request::file();
